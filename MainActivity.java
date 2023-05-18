@@ -1,14 +1,17 @@
-package com.example.myapplication;
+package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import java.time.Instant;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,28 +21,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void info(View view){
-        Intent j = new Intent(this,infoScreen.class);
-        startActivity(j);
+    public void infoPage(View v){
+        Intent infoPages = new Intent(this,InfoPage.class);
+        startActivity(infoPages);
     }
 
     public void enterButton(View v){
+        EditText usernameInput = findViewById(R.id.editTextTextPersonName);
+        String input = usernameInput.getText().toString();
 
-        TextView nameInput = findViewById(R.id.userName);
-        String username = nameInput.getText().toString();
-
-        TextView passwordInput = findViewById(R.id.password);
-        String password = passwordInput.getText().toString();
-
-        if (username.equals("Cristian") && password.equals("Dumbravanu")){
-            Intent i = new Intent(this,displayScreen.class);
-            startActivity(i);
-
+        if(input.equals("Cristian")){
+            Intent secondActivity = new Intent(this,SecondActivity.class);
+            startActivity(secondActivity);
         } else {
-            Toast.makeText(this,"The username : " + username + " and the password : " + password + " arent corrent",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,input + " is not registered try a new name.",Toast.LENGTH_LONG).show();
         }
-
-
     }
 
 }
