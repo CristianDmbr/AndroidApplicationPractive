@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.697" />
 
     <Button
-        android:id="@+id/Remainer"
+        android:id="@+id/Remainder"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="%"
