@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button divisionButton;
     private Button multiplicationButton;
     private Button powerButton;
-    private Button remainerButton;
+    private Button remainderButton;
     private Button eButton;
     private Button pieButton;
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         divisionButton = findViewById(R.id.Division);
         multiplicationButton = findViewById(R.id.Multiplication);
         powerButton = findViewById(R.id.Power);
-        remainerButton = findViewById(R.id.Remainer);
+        remainderButton = findViewById(R.id.Remainder);
         eButton = findViewById(R.id.e);
         pieButton = findViewById(R.id.pie);
 
@@ -85,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        remainerButton.setOnClickListener(new View.OnClickListener() {
+        remainderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performRemainer();
+                performRemainder();
             }
         });
 
@@ -151,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText(" " + power);
     }
 
-    private void performRemainer() {
+    private void performRemainder() {
         double num1 = Double.parseDouble(num1EditText.getText().toString());
         double num2 = Double.parseDouble(num2EditText.getText().toString());
         double remainder = num1 % num2;
